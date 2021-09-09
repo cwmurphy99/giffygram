@@ -101,7 +101,7 @@ applicationElement.addEventListener("click", event => {
 applicationElement.addEventListener("change", event => {
     if (event.target.id === "yearSelection") {
       const yearAsNumber = parseInt(event.target.value)
-      console.log(`User wants to see posts since ${yearAsNumber}`)
+      //console.log(`User wants to see posts since ${yearAsNumber}`)
       //invoke a filter function passing the year as an argument
       showFilteredPosts(yearAsNumber);
     }
@@ -111,8 +111,10 @@ applicationElement.addEventListener("change", event => {
     const epoch = Date.parse(`01/01/${year}`);
     //filter the data
     const filteredData = usePostCollection().filter(singlePost => {
-      if (singlePost.timestamp >= epoch) {
+        if (singlePost.timestamp >= epoch) {
         return singlePost
+      }else{
+          showPostList();
       }
     })
     const postElement = document.querySelector(".postList");

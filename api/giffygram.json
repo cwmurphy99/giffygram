@@ -1,0 +1,45 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Chris",
+      "dateJoined": 1630513631166,
+      "email": "theworldisyours@gmail.com"
+    }
+  ],
+  "posts": [
+    {
+      "title": "This will be amazing",
+      "imageURL": "https://media.giphy.com/media/88iYsvbegSUn9bSTF8/giphy.gif",
+      "description": "No story here",
+      "userId": 1,
+      "timestamp": 1631130005197,
+      "id": 1
+    },
+    {
+      "title": "test",
+      "imageURL": "https://media.giphy.com/media/12vJgj7zMN3jPy/giphy.gif",
+      "description": "test",
+      "userId": 1,
+      "timestamp": 1632148408892,
+      "id": 27
+    },
+    {
+      "title": "test",
+      "imageURL": "https://media.giphy.com/media/xT5LMAaXrdmXKAHAiI/giphy.gif",
+      "description": "test",
+      "userId": 1,
+      "timestamp": 1632148422821,
+      "id": 28
+    },
+    {
+      "title": "Post Malone",
+      "imageURL": "https://media.giphy.com/media/ZBJq9YnKoRimnTEaa0/giphy.gif",
+      "description": "Congratulations!! It FUCKING worked!! ",
+      "userId": 1,
+      "timestamp": 1632149517112,
+      "id": 29
+    }
+  ],
+  "messages": []
+}

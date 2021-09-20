@@ -8,7 +8,8 @@ export const Post = (postObject) => {
   <h4 class="description">${postObject.description}</h4>
   <p timestamp>${Date(postObject.timestamp).toLocaleString().slice(3, 15)}</p>
   <p class="userId">User Id: ${postObject.userId}</p>
-  <div><button id="edit--${postObject.id}">Edit</button></div>
+  <div><button id="edit__${postObject.id}">Edit</button></div>
+  <div><button id="delete__${postObject.id}">Delete</button>
   </section>
   `
 }

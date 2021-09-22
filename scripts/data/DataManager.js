@@ -1,17 +1,52 @@
-const loggedInUser = {
-  id: 1,
-  name: "Chris",
-  dateJoined: 1630513631166,
-  email: "theworldisyours@gmail.com",
-  stateId: 35
+let loggedInUser = {}
+//LOGS OUT THE USER
+export const logoutUser = () => {
+  loggedInUser = {}
 }
+//SEARCHES FOR LOGGED IN USER OR NO
 export const getLoggedInUser = () => {
   return loggedInUser;
+}
+//SESSION STORAGE HOLDS THIS USER AND SETS THE LOGGED IN USER
+export const setLoggedInUser = (userObj) => {
+  loggedInUser = userObj;
 }
 export const getUsers = () => {
   return fetch("http://localhost:8088/users")
     .then(response => response.json())
 }
+export const registerUser = (userObj) => {
+  return fetch(`http://localhost:8088/users`, {
+    method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(userObj)
+  })
+  .then(response => response.json())
+  .then(parsedUser => {
+    setLoggedInUser(parsedUser);
+    return getLoggedInUser();
+  })
+}
+//GATHER INFO FOR THE LIKE BUTTON
+export const postLike = likeObject => {
+	return fetch(`http://localhost:8088/userLikes/?_expand=user`, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json"
+		},
+		body: JSON.stringify(likeObject)
+	})
+		.then(response => response.json())
+}
+//GET ALL THE LIKES FOR EACH POST
+export const getLikes = (postId) => {
+  return fetch(`http://localhost:8088/userLikes?postId=${postId}`)
+    .then(response => response.json())
+}
+
+
 
 let postCollection = [];
 
@@ -22,11 +57,12 @@ export const usePostCollection = () => {
   return [...postCollection];
 }
 export const getPosts = () => {
-  //console.log("Go Get Posts");
-  return fetch("http://localhost:8088/posts")
+  const userId = getLoggedInUser().id
+  return fetch(`http://localhost:8088/posts?_expand=user`)
     .then(response => response.json())
     .then(parsedResponse => {
-      postCollection = parsedResponse;
+      console.log("data with user", parsedResponse)
+      postCollection = parsedResponse
       return parsedResponse;
     })
 }
@@ -71,7 +107,18 @@ export const deletePost = postId => {
   })
     .then(response => response.json())
 }
-
-
-//
-
+export const loginUser = (userObj) => {
+  return fetch(`http://localhost:8088/users?name=${userObj.name}&email=${userObj.email}`)
+  .then(response => response.json())
+  .then(parsedUser => {
+    //is there a user?
+    console.log("parsedUser", parsedUser) //data is returned as an array
+    if (parsedUser.length > 0){
+      setLoggedInUser(parsedUser[0]);
+      return getLoggedInUser();
+    }else {
+      //no user
+      return false;
+    }
+  })
+}

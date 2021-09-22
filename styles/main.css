@@ -14,22 +14,18 @@ body, button, input, select, textarea {
     padding: 0;
     margin: 0;
 }
-
 h1, h2, h3, h4, h5, h6 {
     font-family: "Patua One", serif;
     letter-spacing: 2px;
 }
-
 .actionIcon {
     height: 1.2em;
     margin: 0.5em 0.5em;
     cursor: pointer;
 }
-
 .highlight {
     border-color: purple;
 }
-
 .fakeLink {
     color: -webkit-link;
     cursor: pointer;
@@ -38,15 +34,43 @@ h1, h2, h3, h4, h5, h6 {
     border: none;
     cursor: pointer;
 }
-
 .fakeLink:hover {
     font-weight: bold;
 }
-
 .loginForm {
     margin: 0 25%;
 }
 
-.entryForm{
-    margin-top: 100px;
+#giffygram {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+}
+#entryForm {
+    display: flex;
+    flex-direction: row;
+}
+#post__Section {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+}
+#post__Section {
+    width: 600px;
+}
+#post__image {
+    height: auto;
+    width: auto;
+}
+#post__editAndDelete {
+    display: flex;
+    flex-direction: row;
+}
+#post__edit {
+    margin-right: 2px;
+}
+#post__delete {
+    margin-left: 2px;
 }

@@ -5,11 +5,17 @@
       "name": "Chris",
       "dateJoined": 1630513631166,
       "email": "theworldisyours@gmail.com"
+    },
+    {
+      "name": "Shaq",
+      "email": "shaq@bigdiesel.com",
+      "dateJoined": 1630513631190,
+      "id": 2
     }
   ],
   "posts": [
     {
-      "title": "This will be amazing",
+      "title": "This will be amazing as usual",
       "imageURL": "https://media.giphy.com/media/88iYsvbegSUn9bSTF8/giphy.gif",
       "description": "No story here",
       "userId": 1,
@@ -36,10 +42,63 @@
       "title": "Post Malone",
       "imageURL": "https://media.giphy.com/media/ZBJq9YnKoRimnTEaa0/giphy.gif",
       "description": "Congratulations!! It FUCKING worked!! ",
-      "userId": 1,
+      "userId": 2,
       "timestamp": 1632149517112,
       "id": 29
+    },
+    {
+      "title": "Can you post while logged out?",
+      "imageURL": "https://media.giphy.com/media/d1E1msx7Yw5Ne1Fe/giphy.gif",
+      "description": "Yes, yes you can.  I just ran this test",
+      "userId": 2,
+      "timestamp": 132236377328,
+      "id": 30
+    },
+    {
+      "title": "Bye",
+      "imageURL": "https://media.giphy.com/media/sOVueselOTje8/giphy.gif",
+      "description": "See ya!!",
+      "userId": 2,
+      "timestamp": 132236377326,
+      "id": 31
     }
   ],
-  "messages": []
+  "messages": [],
+  "userLikes": [
+    {
+      "postId": 27,
+      "userId": 2,
+      "id": 1
+    },
+    {
+      "postId": 27,
+      "userId": 2,
+      "id": 2
+    },
+    {
+      "postId": 27,
+      "userId": 2,
+      "id": 3
+    },
+    {
+      "postId": 31,
+      "userId": 2,
+      "id": 4
+    },
+    {
+      "postId": 31,
+      "userId": 2,
+      "id": 5
+    },
+    {
+      "postId": 30,
+      "userId": 2,
+      "id": 6
+    },
+    {
+      "postId": 31,
+      "userId": 1,
+      "id": 7
+    }
+  ]
 }
